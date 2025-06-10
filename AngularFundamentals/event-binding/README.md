@@ -1,59 +1,67 @@
-# EventBinding
+## 📁 Event Binding in Angular
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.5.
+Just like we saw in **Property Binding**, where we bind different properties on an HTML element,  
+**Event Binding** is an approach where we bind different **events** for an HTML element.
 
-## Development server
+---
 
-To start a local development server, run:
+### 🧠 What is Event Binding?
 
-```bash
-ng serve
-```
+In the HTML DOM, there are several events that allow JavaScript to register event handlers on elements in an HTML document.
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+An **event** is basically an action performed by the user on a particular element — for example, a button click.
 
-## Code scaffolding
+There are several types of events in the DOM:
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+- Mouse events (e.g., `click`, `mouseover`)
+- Keyboard events (e.g., `keydown`, `keyup`)
+- Input events (e.g., `input`, `change`)
+  
+These user actions are what we refer to as **events**.
 
-```bash
-ng generate component component-name
-```
+---
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+### 💡 How Event Binding Works
 
-```bash
-ng generate --help
-```
+Events are generally used in combination with functions.  
+A function is executed **only when** the event occurs.
 
-## Building
+For example, let’s define a method `display()` in the component, and bind it to a button’s `click` event to show an alert.
 
-To build the project run:
+---
 
-```bash
-ng build
-```
+### 🧪 Example 1: Basic Click Event Binding
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+#### `app.component.ts`
+```ts
+export class AppComponent {
+  display() {
+    alert('Click event is triggered!');
+  }
+}
+## ❓ Interview Questions & Answers
 
-## Running unit tests
+### Q1. Explain the data flow in event binding.
+**Answer**:  
+In **event binding**, the data flows **from the DOM to the component**.  
+For example, when a `click` event is triggered on an element, the bound method from the component gets called and any passed value flows to it.
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+---
 
-```bash
-ng test
-```
+### Q2. Explain the difference between event binding and property binding.
 
-## Running end-to-end tests
+| Feature            | Event Binding               | Property Binding              |
+|--------------------|-----------------------------|-------------------------------|
+| **Data Flow Direction** | DOM ➝ Component              | Component ➝ DOM              |
+| **Syntax**         | `(event)="expression"`       | `[property]="expression"`     |
+| **Purpose**        | Listen to user actions/events| Set element or directive properties |
+| **Example**        | `(click)="onClick()"`        | `[disabled]="isDisabled"`     |
 
-For end-to-end (e2e) testing, run:
+---
 
-```bash
-ng e2e
-```
+## 📌 Upcoming Topics
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+- Two-way data binding (`[(ngModel)]`)
+- Built-in directives (`*ngIf`, `*ngFor`)
+- Component communication
+- Routing and navigation
