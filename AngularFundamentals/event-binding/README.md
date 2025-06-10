@@ -30,15 +30,7 @@ For example, let’s define a method `display()` in the component, and bind it t
 
 ---
 
-### 🧪 Example 1: Basic Click Event Binding
 
-#### `app.component.ts`
-```ts
-export class AppComponent {
-  display() {
-    alert('Click event is triggered!');
-  }
-}
 ## ❓ Interview Questions & Answers
 
 ### Q1. Explain the data flow in event binding.
